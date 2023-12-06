@@ -19,8 +19,9 @@ function draw() {
   }
 
   frame = frames[0];
-  if (mouseIsPressed) {
-    frame.filter(INVERT)
-  }
-  image(frame, 0, 0, width, height);
+  image(video.get(), 0, 0, width, height);
+
+  frame.filter(INVERT)
+  tint(255, 40)
+  image(frames[0], 0, 0, width, height);
 }
