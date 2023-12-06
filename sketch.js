@@ -1,4 +1,5 @@
 let video;
+let frame;
 
 function setup() {
   createCanvas(400, 400);
@@ -10,5 +11,9 @@ function setup() {
 }
 
 function draw() {
-  image(video.get(), 0, 0, width, height)
+  frame = video.get();
+  if (mouseIsPressed) {
+    frame.filter(INVERT)
+  }
+  image(frame, 0, 0, width, height);
 }
