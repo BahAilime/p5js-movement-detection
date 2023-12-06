@@ -5,3 +5,9 @@ body, main {
     justify-content: center;
     align-items: center;
 }
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
