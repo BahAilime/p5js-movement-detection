@@ -1,5 +1,6 @@
 let video;
 let frame;
+let frames = [];
 
 function setup() {
   createCanvas(400, 400);
@@ -11,7 +12,13 @@ function setup() {
 }
 
 function draw() {
-  frame = video.get();
+  frames.push(video.get());
+
+  if (frames.length > 5) {
+    frames.shift();
+  }
+
+  frame = frames[0];
   if (mouseIsPressed) {
     frame.filter(INVERT)
   }
